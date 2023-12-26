@@ -1,5 +1,5 @@
 from turtle import Turtle
-from random import randint
+import secrets
 
 BALL_SPEED = 25
 BALL_MEASURE = 1
@@ -10,7 +10,7 @@ class Ball(Turtle):
         self.y_pos = 0
         self.x_speed = BALL_SPEED
         self.player_serve = player_serve
-        self.y_direction = randint(a=-15, b=15)
+        self.y_direction = secrets.SystemRandom().randint(a=-15, b=15)
         self.shape("square")
         self.up()
         self.shapesize(stretch_wid=BALL_MEASURE, stretch_len=BALL_MEASURE)
